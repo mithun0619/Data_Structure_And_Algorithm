@@ -1,4 +1,4 @@
-# LeetCode 30 Days Assignment
+# Data Structure And Algorithm Using LeetCode 
 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
