@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> shuffle(vector<int>& nums, int n) {
-        vector<int> ans(nums.size());
+        vector<int> ans(nums.size(),0);
         int i=0;
         int j=nums.size()/2;
         int k=0;
