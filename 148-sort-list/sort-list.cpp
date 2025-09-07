@@ -25,13 +25,11 @@ public:
             d=d->next;
         }
 
-        while(l1){
+        if(l1){
             d->next=l1;
             l1=l1->next;
             d=d->next;
-        }
-
-        while(l2){
+        }else{
             d->next=l2;
             l2=l2->next;
             d=d->next;
