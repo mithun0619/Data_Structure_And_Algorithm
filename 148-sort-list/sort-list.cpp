@@ -27,12 +27,8 @@ public:
 
         if(l1){
             d->next=l1;
-            l1=l1->next;
-            d=d->next;
         }else{
             d->next=l2;
-            l2=l2->next;
-            d=d->next;
         }
 
         return dummy->next;
