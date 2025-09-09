@@ -25,8 +25,6 @@ public:
             t=t->next;
             }
     }
-        d->next=nullptr;
         return dummy->next;
-    
     }
 };
