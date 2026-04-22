@@ -6,9 +6,11 @@ public:
         string prefix=s[0];
 
         for(int i=1;i<n;i++){
-            while(s[i].find(prefix)!=0){
-                prefix=prefix.substr(0,prefix.size()-1);
+            int j=0;
+            while(j<prefix.size() && j<s[i].size() && prefix[j]==s[i][j]){
+                j++;
             }
+            prefix=prefix.substr(0,j);
             if(prefix.empty())return "";
         }
         return prefix;
