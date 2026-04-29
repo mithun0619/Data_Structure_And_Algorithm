@@ -10,56 +10,21 @@
  */
 class Solution {
 public:
-    ListNode *mergeLL(ListNode *l1,ListNode *l2){
-        ListNode *dummy=new ListNode(0);
-        ListNode *d=dummy;
-
-        while(l1 && l2){
-            if(l1->val <= l2->val){
-                d->next=l1;
-                l1=l1->next;
-            }else{
-                d->next=l2;
-                l2=l2->next;
-            }
-            d=d->next;
-        }
-
-        if(l1){
-            d->next=l1;
-        }else{
-            d->next=l2;
-        }
-
-        return dummy->next;
-    }
-    ListNode *findMiddle(ListNode *head){
-        if(!head || !head->next){
-            return head;
-        }
-        ListNode *slow=head;
-        ListNode *fast=head->next;
-
-        while(fast && fast->next){
-            slow=slow->next;
-            fast=fast->next->next;
-        }
-        return slow;
-    }
-    
     ListNode* sortList(ListNode* head) {
-        if(!head || !head->next){
-            return head;
+        multiset<int> s;
+
+        ListNode *t=head;
+
+        while(t){
+            s.insert(t->val);
+            t=t->next;
         }
 
-        ListNode *middle=findMiddle(head);
-        ListNode *right=middle->next;
-        middle->next=nullptr;
-        ListNode *left=head;
-
-        left=sortList(left);
-        right=sortList(right);
-
-       return mergeLL(left,right);
+        t=head;
+        for(int i:s){
+            t->val=i;
+            t=t->next;
+        }
+        return head;
     }
 };
