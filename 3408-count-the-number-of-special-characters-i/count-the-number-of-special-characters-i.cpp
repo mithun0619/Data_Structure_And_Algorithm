@@ -1,10 +1,19 @@
 class Solution {
 public:
     int numberOfSpecialChars(string word) {
+        unordered_set<char> lower,upper;
+
+        for(char c:word){
+            if(islower(c)){
+                lower.insert(c);
+            }else{
+                upper.insert(tolower(c));
+            }
+        }
         int count=0;
 
-        for(char ch='a';ch<='z';ch++){
-            if(word.find(ch)!=string::npos && word.find(toupper(ch))!=string::npos){
+        for(char ch:lower){
+            if(upper.find(ch)!=upper.end()){
                 count++;
             }
         }
